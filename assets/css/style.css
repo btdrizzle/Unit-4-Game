@@ -1,0 +1,42 @@
+#header {
+    background-color: black;
+}
+#header h1 {
+    font-family: 'Righteous', cursive;
+    color: #F19F3A;
+}
+#logo img {
+    max-height: 150px;
+}
+#bigContainer {
+    height: auto;
+    min-height: calc(100vh - 150px);
+    background-image: url(../images/BGTile1.jpg);
+}
+.choose {
+    height: auto;
+}
+.choose h2 {
+    color: #A9310A;
+    text-shadow: 2px 2px 2px #F19F3A;
+}
+.tile {
+    width: 150px;
+    text-align: center;
+    margin: 5;
+}
+.tile img {
+    width: 100px;
+    margin: 0
+}
+#fightingContainer {
+    margin: auto;
+    text-align: center;
+    
+}
+#champion, #adversary {
+    color: #A9310A;
+    width: 33%;
+    text-shadow: 2px 2px 2px #F19F3A;
+}
+
