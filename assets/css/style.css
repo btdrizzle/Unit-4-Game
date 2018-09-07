@@ -26,17 +26,19 @@
     margin: 5;
 }
 .tile img {
-    width: 100px;
+    width: 125px;
     margin: 0
 }
 #fightingContainer {
     margin: auto;
     text-align: center;
+    min-height: 300px;
     
 }
-#champion, #adversary {
+.champion, .adversary {
     color: #A9310A;
     width: 33%;
     text-shadow: 2px 2px 2px #F19F3A;
+    
 }
 
