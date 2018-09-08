@@ -52,7 +52,7 @@ $(document).ready(function() {
     //Playlist used for background music
     var playlist = ["./assets/audio/Alliance.mp3",
                     "./assets/audio/Glory_of_the_Empire.mp3",
-                    "./assets/audio/Yodas_guidance.mp3",
+                    "./assets/audio/Yodas_Guidance.mp3",
                     "./assets/audio/Imperial_Inquisition.mp3"];
                     
     //Using this function to play event sounds           
@@ -76,8 +76,9 @@ $(document).ready(function() {
     var darkside = new sound("./assets/audio/darkside.mp3");
 
     //This sound function is for background music
+    var playlist_index;
     function bgAudio () {
-        var playlist_index;
+        playlist_index;
         playlist_index = 0;
         audio = new Audio();
         audio.src = playlist[0];
