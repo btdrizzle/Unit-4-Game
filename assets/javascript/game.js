@@ -71,9 +71,9 @@ $(document).ready(function() {
         }
     }
     //Click Sound
-    var clicky = new sound("../assets/audio/heavy_throw_switch.mp3");
-    var force = new sound("../assets/audio/Strongwiththeforce.mp3");
-    var darkside = new sound("../assets/audio/darkside.mp3");
+    var clicky = new sound("./assets/audio/heavy_throw_switch.mp3");
+    var force = new sound("./assets/audio/Strongwiththeforce.mp3");
+    var darkside = new sound("./assets/audio/darkside.mp3");
 
     //This sound function is for background music
     function bgAudio () {
