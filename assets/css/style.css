@@ -35,10 +35,14 @@
     min-height: 300px;
     
 }
-.champion, .adversary {
+.champion h3, .adversary h3 {
     color: #A9310A;
+    text-shadow: 2px 2px 2px #F19F3A;   
+}
+.champion, .adversary {
     width: 33%;
-    text-shadow: 2px 2px 2px #F19F3A;
-    
+}
+#audioButton {
+    margin: auto;
 }
 
