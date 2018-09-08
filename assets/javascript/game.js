@@ -76,31 +76,14 @@ $(document).ready(function() {
     var darkside = new sound("./assets/audio/darkside.mp3");
 
     //This sound function is for background music
-    var playlist_index;
-    function bgAudio () {
-        playlist_index;
+
+    function togglePlay() {
+        var playlist_index;
         playlist_index = 0;
         audio = new Audio();
         audio.src = playlist[0];
         audio.loop = false;
         audio.volume = 0.25;
-        audio.addEventListener('ended', function() {
-            switchTrack();
-        });
-        function switchTrack() {
-            if(playlist_index == (playlist.length -1)) {
-                playlist_index = 0;
-            }
-            else {
-                playlist_index++;
-            }
-            audio.src = playlist[playlist_index];
-            audio.play();
-        }
-    }
-    bgAudio();
-
-    function togglePlay() {
         audio.play();
         audio.addEventListener('ended', function() {
             switchTrack();
