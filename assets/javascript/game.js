@@ -101,6 +101,19 @@ $(document).ready(function() {
 
     function togglePlay() {
         audio.play();
+        audio.addEventListener('ended', function() {
+            switchTrack();
+        });
+        function switchTrack() {
+            if(playlist_index == (playlist.length -1)) {
+                playlist_index = 0;
+            }
+            else {
+                playlist_index++;
+            }
+            audio.src = playlist[playlist_index];
+            audio.play();
+        }
         if(audio.pause) {
             audio.play();
         }else{
