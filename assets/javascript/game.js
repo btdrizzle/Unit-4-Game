@@ -51,7 +51,7 @@ $(document).ready(function() {
     };
     //Playlist used for background music
     var playlist = ["./assets/audio/Alliance.mp3",
-                    "./assets/audio/Glory_of_the_empire.mp3",
+                    "./assets/audio/Glory_of_the_Empire.mp3",
                     "./assets/audio/Yodas_guidance.mp3",
                     "./assets/audio/Imperial_Inquisition.mp3"];
                     
