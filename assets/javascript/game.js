@@ -84,7 +84,7 @@ $(document).ready(function() {
         audio.loop = false;
         audio.volume = 0.25;
         audio.muted = true;
-        audio.play();
+        audio.pause();
         audio.addEventListener('ended', function() {
             switchTrack();
         });
@@ -102,10 +102,10 @@ $(document).ready(function() {
     bgAudio();
 
     function togglePlay() {
-        if(audio.muted) {
-            audio.muted = false;
+        if(audio.pause) {
+            audio.play();
         }else{
-            audio.muted = true;
+            audio.pause();
         }
     }
 
