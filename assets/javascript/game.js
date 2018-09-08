@@ -77,7 +77,7 @@ $(document).ready(function() {
 
     //This sound function is for background music
 
-    function togglePlay() {
+    function bgAudio() {
         var playlist_index;
         playlist_index = 0;
         audio = new Audio();
@@ -98,15 +98,19 @@ $(document).ready(function() {
             audio.src = playlist[playlist_index];
             audio.play();
         }
-        if(audio.pause) {
-            audio.play();
-        }else{
-            audio.pause();
-        }
     }
 
     $('#audioButton').on('click', function() {
-        togglePlay();
+        if(!audio.play) {
+            bgAudio();
+        }
+        else {
+            if(audio.pause) {
+                audio.play();
+            }else{
+                audio.pause();
+            }
+        }
     });
 
     //This function creates character tiles and gives them attributes and classes
