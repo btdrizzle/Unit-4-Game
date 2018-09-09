@@ -143,7 +143,7 @@ $(document).ready(function() {
     //This is what happens when the "Attack" button is clicked and the game is played
     function clickFunction() {
         $('#adversary').off();
-        if(gameOver === true) {
+        if(gameOver == true) {
             return;
         }
         else if($('#champion').is(':empty')) {
@@ -194,7 +194,8 @@ $(document).ready(function() {
                 $('#game-over-text').text("You have won the game!  You are the chosen one who brings balance to the force!");
                 $('#adversary').empty();
                 force.play();
-                gameOver === true;
+                gameOver = true;
+                console.log(gameOver == true);
                 playAgainButton();
                 
             }
@@ -206,7 +207,8 @@ $(document).ready(function() {
                     $('#game-end-text').empty();
                     $('#game-over-text').text("You have lost the game, padawan!  Click below to play again!  Do or do not, there is no try!");
                     darkside.play();
-                    gameOver === true;
+                    gameOver = true;
+                    console.log(gameOver == true);
                     playAgainButton();
                     
                 }
@@ -214,7 +216,8 @@ $(document).ready(function() {
             else if(newGoodHP < 1) {
                 $('#game-over-text').text("You have lost the game, padawan!  Click below to play again!  Do or do not, there is no try!");
                 darkside.play();
-                gameOver === true;
+                gameOver = true;
+                console.log(gameOver == true);
                 playAgainButton();
                 
             }
@@ -249,7 +252,7 @@ $(document).ready(function() {
             $('#game-over-text').empty();
             $('#game-over-button').empty();
             $('#choose-text').text('Choose your champion!');
-            gameOver === false;
+            gameOver = false;
             makeCharacters();
 
             // playGame();
@@ -285,7 +288,7 @@ $(document).ready(function() {
         //What happens when the "Attack" button is clicked
 
         $('body').on("click", '#attack', function() {
-            if(gameOver === true) {
+            if(gameOver == true) {
                 return;
             }
             else {
