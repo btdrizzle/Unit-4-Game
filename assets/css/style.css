@@ -48,8 +48,11 @@
     width: 33%;
     
 }
-#audioButton {
+#audioButton, #pause-play {
     margin: auto;
+}
+#audioButton:hover, #pause-play:hover, #attack:hover {
+    box-shadow: 0 0 10px 10px rgb(169, 49, 10);
 }
 
 

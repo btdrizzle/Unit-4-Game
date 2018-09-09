@@ -22,8 +22,8 @@ $(document).ready(function() {
                         name: "Chopper",
                         image: "./assets/images/Chopper.jpg",
                         HP: 75,
-                        attackBegin: 50,
-                        counterAttack: 5},
+                        attackBegin: 5,
+                        counterAttack: 10},
                     4: {
                         name: "GA Thrawn",
                         image: "./assets/images/GAThrawn.jpg",
@@ -47,7 +47,7 @@ $(document).ready(function() {
                         image: "./assets/images/Tarkin.jpg",
                         HP: 200,
                         attackBegin: 6,
-                        counterAttack: 2}
+                        counterAttack: 20}
     };
     //Playlist used for background music
     var playlist = ["./assets/audio/Alliance.mp3",
@@ -99,20 +99,25 @@ $(document).ready(function() {
             audio.play();
         }
     }
-
-    $('#audioButton').on('click', function() {
-        if(!audio.play) {
-            bgAudio();
+    function toggleAudio() {
+        console.log(audio.paused)
+        if(audio.paused) {
+            audio.play();
         }
         else {
-            if(audio.pause) {
-                audio.play();
-            }else{
-                audio.pause();
-            }
+            audio.pause();
         }
+    }
+    $('body').on('click', '#audioButton', function() {
+            bgAudio();
+            $('#audioButton').attr("id","pause-play");
+    
     });
 
+    $('body').on('click', '#pause-play', function() {
+        toggleAudio();
+    });
+    var gameOver;
     //This function creates character tiles and gives them attributes and classes
     function makeCharacters() {
         for (let i = 0; i < 8; i++) {
@@ -133,11 +138,10 @@ $(document).ready(function() {
     }
     //Variables needed to make the game work, especially with calculations
 
-    var goodGuy,badGuy,goodHP,badHP,goodAttack,badCounter,goodName,badName,newText,newBadHP,newGoodHP, gameOver; 
+    var goodGuy,badGuy,goodHP,badHP,goodAttack,badCounter,goodName,badName,newText,newBadHP,newGoodHP; 
     
     //This is what happens when the "Attack" button is clicked and the game is played
     function clickFunction() {
-        console.log('asdf')
         $('#adversary').off();
         if(gameOver === true) {
             return;
@@ -254,8 +258,8 @@ $(document).ready(function() {
 
 
     function playGame() {
-        gameOver === false;
-
+        gameOver = false;
+        
         makeCharacters();
 
         //Fills "Champion" first, then "Adversary."  Then only "Adversary" until the next game.
@@ -279,8 +283,13 @@ $(document).ready(function() {
 
         //What happens when the "Attack" button is clicked
 
-        $('#attack').on("click", function() {
-            clickFunction();
+        $('body').on("click", '#attack', function() {
+            if(gameOver === true) {
+                return;
+            }
+            else {
+                clickFunction();
+            }
         });
 
     }
