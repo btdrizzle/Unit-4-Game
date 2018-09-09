@@ -192,6 +192,7 @@ $(document).ready(function() {
             //Analyzes what happened during the click of "Attack" and makes determinations
             if((newBadHP < 1) && $('#choose').is(':empty')) {
                 $('#game-over-text').text("You have won the game!  You are the chosen one who brings balance to the force!");
+                $('#adversary').empty();
                 force.play();
                 gameOver === true;
                 playAgainButton();
